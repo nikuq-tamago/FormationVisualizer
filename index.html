@@ -99,6 +99,14 @@
         <button id="reset-btn" class="secondary-btn danger-btn" type="button">Reset</button>
       </section>
 
+      <div id="game-status" class="game-status" aria-live="polite">
+        MAX点を設定して開始してください。
+      </div>
+
+      <section class="court-panel" aria-label="court diagram">
+        <svg id="court-svg" viewBox="0 0 720 420" role="img" aria-label="Badminton court diagram"></svg>
+      </section>
+
       <section class="meta-panel" aria-live="polite">
         <div class="meta-item">
           <span class="meta-label">Server</span>
@@ -115,14 +123,6 @@
             <strong id="serve-side-label">Right</strong>
           </div>
         </div>
-      </section>
-
-      <div id="game-status" class="game-status" aria-live="polite">
-        MAX点を設定して開始してください。
-      </div>
-
-      <section class="court-panel" aria-label="court diagram">
-        <svg id="court-svg" viewBox="0 0 720 420" role="img" aria-label="Badminton court diagram"></svg>
       </section>
 
       <section class="players-panel" aria-label="players list">
