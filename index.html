@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Badminton doubles formation visualizer for tracking scores, serve order, and player position."
+    />
+    <title>Badminton Doubles Formation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <p class="eyebrow">Badminton Doubles</p>
+        <h1>Formation Visualizer</h1>
+      </header>
+
+      <section class="panel setup-panel" aria-label="max point settings">
+        <label class="panel-label" for="max-point-input">MAX点</label>
+        <div class="max-row">
+          <input
+            id="max-point-input"
+            type="number"
+            min="1"
+            max="99"
+            inputmode="numeric"
+            placeholder="例: 21"
+            aria-label="MAX point"
+          />
+          <button id="apply-max-button" class="primary-btn" type="button">設定</button>
+        </div>
+        <p id="max-point-status" class="status-hint">MAX点未設定</p>
+      </section>
+
+      <section class="panel name-panel" aria-label="team and player name settings">
+        <h2 class="panel-subtitle">Team / Player Names</h2>
+        <div class="name-grid">
+          <div class="team-name-group team-a">
+            <label class="field">
+              <span>Team A 名</span>
+              <input id="team-a-name" type="text" maxlength="20" value="Team A" />
+            </label>
+            <label class="field">
+              <span>A1 メンバー</span>
+              <input id="player-A1-name" type="text" maxlength="20" value="A1" />
+            </label>
+            <label class="field">
+              <span>A2 メンバー</span>
+              <input id="player-A2-name" type="text" maxlength="20" value="A2" />
+            </label>
+          </div>
+          <div class="team-name-group team-b">
+            <label class="field">
+              <span>Team B 名</span>
+              <input id="team-b-name" type="text" maxlength="20" value="Team B" />
+            </label>
+            <label class="field">
+              <span>B1 メンバー</span>
+              <input id="player-B1-name" type="text" maxlength="20" value="B1" />
+            </label>
+            <label class="field">
+              <span>B2 メンバー</span>
+              <input id="player-B2-name" type="text" maxlength="20" value="B2" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="scoreboard" aria-label="scoreboard">
+        <div class="team-card team-a">
+          <div class="team-name-row">
+            <span class="team-badge">A</span>
+            <span id="team-a-label">Team A</span>
+          </div>
+          <div class="score-value" id="score-a">0</div>
+          <button class="score-btn team-a-btn" data-team="A" type="button" aria-label="Add one point to Team A">
+            A 得点 +1
+          </button>
+        </div>
+
+        <div class="vs-pill">VS</div>
+
+        <div class="team-card team-b">
+          <div class="team-name-row">
+            <span class="team-badge">B</span>
+            <span id="team-b-label">Team B</span>
+          </div>
+          <div class="score-value" id="score-b">0</div>
+          <button class="score-btn team-b-btn" data-team="B" type="button" aria-label="Add one point to Team B">
+            B 得点 +1
+          </button>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="game controls">
+        <button id="undo-btn" class="secondary-btn" type="button">Undo</button>
+        <button id="reset-btn" class="secondary-btn danger-btn" type="button">Reset</button>
+      </section>
+
+      <section class="meta-panel" aria-live="polite">
+        <div class="meta-item">
+          <span class="meta-label">Server</span>
+          <strong id="server-label">A1</strong>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Receiver</span>
+          <strong id="receiver-label">B1</strong>
+        </div>
+        <div class="meta-item meta-item-serve">
+          <span class="meta-label">Serve side</span>
+          <div class="serve-badge">
+            <img id="serve-icon" src="assets/icons/serve-right.svg" alt="Serve side icon" />
+            <strong id="serve-side-label">Right</strong>
+          </div>
+        </div>
+      </section>
+
+      <div id="game-status" class="game-status" aria-live="polite">
+        MAX点を設定して開始してください。
+      </div>
+
+      <section class="court-panel" aria-label="court diagram">
+        <svg id="court-svg" viewBox="0 0 720 420" role="img" aria-label="Badminton court diagram"></svg>
+      </section>
+
+      <section class="players-panel" aria-label="players list">
+        <h2>Players</h2>
+        <div id="player-list" class="player-list"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

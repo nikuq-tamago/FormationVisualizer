@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Badminton court">
+  <defs>
+    <style>
+      .court-bg { fill: #eaf7ea; }
+      .court-line { stroke: #294d52; stroke-width: 4; fill: none; }
+      .court-line-thin { stroke: #294d52; stroke-width: 2; fill: none; }
+      .court-text { fill: #244a56; font: 700 24px 'Segoe UI', sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="court-bg" x="0" y="0" width="720" height="420" rx="18" />
+  <rect class="court-line" x="50" y="50" width="620" height="320" />
+  <line class="court-line" x1="360" y1="50" x2="360" y2="370" />
+
+  <line class="court-line-thin" x1="50" y1="82" x2="670" y2="82" />
+  <line class="court-line-thin" x1="50" y1="338" x2="670" y2="338" />
+  <line class="court-line-thin" x1="268" y1="50" x2="268" y2="370" />
+  <line class="court-line-thin" x1="452" y1="50" x2="452" y2="370" />
+  <line class="court-line-thin" x1="87" y1="50" x2="87" y2="370" />
+  <line class="court-line-thin" x1="633" y1="50" x2="633" y2="370" />
+  <line class="court-line-thin" x1="87" y1="210" x2="268" y2="210" />
+  <line class="court-line-thin" x1="452" y1="210" x2="633" y2="210" />
+
+  <circle class="court-line-thin" cx="360" cy="210" r="10" />
+
+  <text class="court-text" x="336" y="36" text-anchor="middle">NET</text>
+</svg>
